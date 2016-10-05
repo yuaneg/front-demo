@@ -5,4 +5,65 @@
 	height: 800px;
 	filter: blur(10px);
 	-webkit-filter: blur(10px);
+	position: absolute;
+	z-index: 2;
+}
+
+#blur_div{
+	position: relative;
+	margin: auto;
+	width: 600px;
+	height: 800px;
+}
+
+#blur_img{
+	position: absolute;
+	margin: auto;
+	width: 600px;
+	height: 800px;
+	z-index: 1;
+}
+
+#canvas_blur{
+	position: absolute;
+	margin: auto;
+	width: 600px;
+	height: 800px;
+	z-index: 3;
+}
+
+.button{
+	display: block;
+	position: absolute;
+	z-index: 4;
+	color: red;
+	width: 100px;
+	height: 30px;
+	text-decoration: none;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 5px;
+}
+
+#reset_button{
+	bottom: 80px;
+	left: 100px;
+}
+#reset_button:hover{
+	color: white;
+}
+
+
+#show_button{
+	bottom: 80px;
+	right: 100px;
+}
+
+#show_button:hover{
+	color: white;
+}
+
+*{
+	margin: 0;
+	padding: 0;
 }

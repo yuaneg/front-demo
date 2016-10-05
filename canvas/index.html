@@ -3,16 +3,29 @@
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
+		<!--
+        	作者：1534915553@qq.com
+        	时间：2016-10-05
+        	描述：app 端显示限制
+        -->
+		<meta name="viewport" 
+			content="height= device-height,
+					width=device-width,
+					initial-scale=1.0,
+					minimum-scale = 1.0,
+					maximum-scale = 1.0,
+					user-scalable=no"/>
 	</head>
 	<link rel="stylesheet" href="css/canvas_blur.css" />
-	<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
-	<script type="text/javascript" src="js/blur.js" ></script>
-	<!--
-    	作者：1534915553@qq.com
-    	时间：2016-10-05
-    	描述：canvas blur demo
-    -->
 	<body>
-		<img id="canvas_blur_img" src="img/canvas_blur.jpeg" />
+		<div id="blur_div">
+		<img src="img/canvas_blur.bmp" id="blur_img" />
+		<img id="canvas_blur_img" src="img/canvas_blur.bmp" />
+		<canvas id="canvas_blur" ></canvas>
+		<a href="javascript:reset()" id="reset_button" class="button">重置</a>
+		<a href="javascript:show()" id="show_button" class="button">显示</a>
+		</div>
 	</body>
+<script type="text/javascript" src="js/blur.js" ></script>
+<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
 </html>
