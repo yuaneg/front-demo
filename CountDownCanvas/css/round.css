@@ -1,0 +1,10 @@
+#roundId{
+	position: relative;
+	width: 1024px;
+	height: 768px;
+	margin: auto;
+}
+
+#roundCanvas{
+	position: absolute;	
+}

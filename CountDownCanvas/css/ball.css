@@ -1,0 +1,11 @@
+#ballDiv{
+	display: block;
+	position: relative;
+	width: 600px;
+	height: 600px;
+	margin: auto;
+}
+#ballCanvas{
+	position: absolute;
+	border: 2px solid red;
+}

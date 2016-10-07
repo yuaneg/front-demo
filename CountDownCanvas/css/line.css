@@ -1,0 +1,12 @@
+#canvasDiv{
+	position: relative;
+	height: 1024px;
+	width: 768px;
+	margin: auto;
+}
+
+#canvasId{
+	border:2px solid green;
+	position: absolute;	
+}
+
