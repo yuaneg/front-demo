@@ -1,7 +1,7 @@
-var WINDOW_WIDTH = window.innerWidth;
-var WINDOW_HEIGHT = window.innerHeight-100;
+var WINDOW_WIDTH = document.body.clientWidth
+var WINDOW_HEIGHT = document.body.clientHeight;
 //圆的半径
-var RADIUS = 8;
+var RADIUS = WINDOW_WIDTH/180;
 var canvas = document.getElementById('canvasCountDown');
 var context = canvas.getContext('2d');
 canvas.height = WINDOW_HEIGHT;
