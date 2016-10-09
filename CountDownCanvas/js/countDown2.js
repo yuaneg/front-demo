@@ -1,16 +1,16 @@
-var WINDOW_WIDTH = document.body.offsetWidth;
-var WINDOW_HEIGHT = 600;
+var WINDOW_WIDTH = window.innerWidth;
+var WINDOW_HEIGHT = window.innerHeight-100;
 //圆的半径
 var RADIUS = 8;
-
 var canvas = document.getElementById('canvasCountDown');
 var context = canvas.getContext('2d');
 canvas.height = WINDOW_HEIGHT;
 canvas.width = WINDOW_WIDTH;
 
 //小球颜色常量常量
-var ballColor = ['#E6421A','#74BB44','#BB44BB','#3CC4C4','#22DD6D','#A25E87'];
+var BALL_COLOR = ['#E6421A','#74BB44','#BB44BB','#3CC4C4','#22DD6D','#A25E87'];
 var balls = [];
+
 var date = new Date();
 var fhourVa = parseInt(date.getHours()/10);
 var shourVa = date.getHours()%10;
@@ -21,7 +21,8 @@ var ssecondVa = date.getSeconds()%10;
 
 window.onload = function(){
 	setInterval(function(){
-		update();	
+		update();
+		console.log(balls.length);
 	},10)
 }
 
@@ -32,6 +33,10 @@ function update(){
 	
 }
 
+
+/**
+ * 更新时间
+ */
 function timeUpdate(){	
 	
 	context.clearRect(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
@@ -89,7 +94,7 @@ function timeUpdate(){
 
 
 /**
- * 画数字
+ * 画点阵图
  * @param {Object} x 起始坐标x
  * @param {Object} y 起始坐标Y
  * @param {Object} num 数字
@@ -117,9 +122,9 @@ function render(x,y,num,context,radius,color,relax){
 
 function getballColor(){
 	//产生随机数
-	var colorindex = Math.random()*ballColor.length;
+	var colorindex = Math.random()*BALL_COLOR.length;
 	//取出随机颜色
-	return ballColor[parseInt(colorindex)];
+	return BALL_COLOR[parseInt(colorindex)];
 }
 
 /**
@@ -174,6 +179,13 @@ function updateBalls(){
 		balls[i].x += balls[i].vx;
 		balls[i].y += balls[i].vy;
 		balls[i].vy += balls[i].g;
-		//进行碰撞检测
+		//Y轴进行碰撞检测
+		if(balls[i].y + RADIUS >= canvas.height ){
+			balls[i].vy = -balls[i].vy*0.5;
+		}
+		//x轴检测移除小球
+		if(balls[i].x < 0 || balls[i].x > canvas.width){
+			balls.splice(i,1);
+		}
 	}
 }
