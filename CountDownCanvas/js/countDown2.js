@@ -22,7 +22,7 @@ var ssecondVa = date.getSeconds()%10;
 window.onload = function(){
 	setInterval(function(){
 		update();
-		console.log(balls.length);
+		//console.log(balls.length);
 	},10)
 }
 
@@ -145,8 +145,8 @@ function addBalls(x,y,num,radius,relax){
 			var color = getballColor();
 			ball = {"x":(j+1)*(radius+relax)*2+x,
 					"y":(i+1)*(radius+relax)*2+y,
-					"vx":-Math.random()*10,
-					"vy":-Math.random()*10,
+					"vx":-(Math.random()*10+0.5),
+					"vy":-(Math.random()*10+0.5),
 					"g":Math.random(),
 					"color":color};
 			balls.push(ball);
